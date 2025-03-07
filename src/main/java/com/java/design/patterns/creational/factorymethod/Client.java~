@@ -1,0 +1,13 @@
+package com.java.design.patterns.creational.factorymethod;
+
+public class Client {
+    private Vehicle vehicle;
+
+    public Client(VehicleFactory vehicleFactory) {
+        vehicle = vehicleFactory.create();
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+}

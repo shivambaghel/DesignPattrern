@@ -1,0 +1,29 @@
+package com.java.design.patterns.creational.prototype;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainClass {
+    public static void main(String[] args) {
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        Prototype initial = new Prototype(list);
+        System.out.println("Initial values      : " +initial.attributes);
+
+        Prototype shallowCopy = initial.clone();
+        System.out.println("Shallow copy values : " +shallowCopy.attributes);
+
+        Prototype deepCopyFromShallow = shallowCopy.deepClone();
+        System.out.println("Deep copy values    : " +deepCopyFromShallow.attributes);
+
+
+        deepCopyFromShallow.attributes.add(5);
+        System.out.println("Shallow copy values Post deep-copy changes: " +shallowCopy.attributes);
+        System.out.println("Deep copy values Post deep-copy changes   : " +deepCopyFromShallow.attributes);
+    }
+}

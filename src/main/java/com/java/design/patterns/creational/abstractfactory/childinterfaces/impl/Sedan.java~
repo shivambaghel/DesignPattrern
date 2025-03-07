@@ -1,0 +1,4 @@
+package com.java.design.patterns.creational.abstractfactory.childinterfaces.impl;
+
+public class Sedan {
+}

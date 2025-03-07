@@ -1,0 +1,34 @@
+package com.java.design.patterns.creational.abstractfactory;
+
+import com.java.design.patterns.creational.abstractfactory.childinterfaces.Car;
+import com.java.design.patterns.creational.abstractfactory.childinterfaces.CarSpecification;
+import com.java.design.patterns.creational.abstractfactory.factoryinterfaces.CarFactory;
+import com.java.design.patterns.creational.abstractfactory.factoryinterfaces.impl.EuropeCarFactory;
+import com.java.design.patterns.creational.abstractfactory.factoryinterfaces.impl.NorthAmericanCarFactory;
+
+public class MainClient {
+
+    public static void main(String[] args) {
+
+        System.out.println("North American client requesting car");
+        CarFactory northAmericanFactory = new NorthAmericanCarFactory();
+
+        Car NorthAmericanCar = northAmericanFactory.createCar();
+        NorthAmericanCar.assemble();
+
+        CarSpecification NorthAmericanCarSpecification = northAmericanFactory.CreateSpecification();
+        NorthAmericanCarSpecification.displayCarSpecification();
+
+        System.out.println();
+
+        System.out.println("European client requesting car");
+        CarFactory europeFactory = new EuropeCarFactory();
+
+        Car europeCar = europeFactory.createCar();
+        europeCar.assemble();
+
+        CarSpecification europeCarSpecification = europeFactory.CreateSpecification();
+        europeCarSpecification.displayCarSpecification();
+
+    }
+}

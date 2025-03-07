@@ -1,0 +1,5 @@
+package com.java.design.patterns.creational.factorymethod;
+
+public interface VehicleFactory {
+   Vehicle create();
+}

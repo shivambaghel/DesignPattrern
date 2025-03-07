@@ -1,0 +1,10 @@
+package com.java.design.patterns.creational.factorymethod;
+
+public class TwoWheelerFactory implements VehicleFactory{
+
+    @Override
+    public Vehicle create() {
+        System.out.println("Creating Two Wheeler from Factory of Two Wheeler");
+        return new TwoWheeler();
+    }
+}
