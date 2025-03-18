@@ -12,10 +12,10 @@ public class DatabaseService {
 
     public void performDatabaseOperation() throws InterruptedException {
         try {
-            DatabaseConnection conn = connectionPool.borrow();
-            Connection connection = conn.getConnection();
+            //DatabaseConnection conn = connectionPool.borrow();
+           //Connection connection = conn.getConnection();
             // perform database operation using the connection
-            connectionPool.returnConnection(conn);
+            //connectionPool.returnConnection(conn);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
